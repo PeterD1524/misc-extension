@@ -1,0 +1,30 @@
+{
+    "name": "misc",
+    "version": "1.0",
+    "description": "misc",
+    "background": {
+      "scripts": [
+        "background.js"
+      ],
+      "persistent": false
+    },
+    "permissions": [
+        "contextMenus"
+    ],
+    "content_scripts": [
+        {
+            "matches": [
+                "<all_urls>"
+            ],
+            "css": [
+                "myStyles.css"
+            ],
+            "js": [
+                "contentScript.js"
+            ],
+            "run_at": "document_idle",
+            "all_frames": true
+        }
+    ],
+    "manifest_version": 2
+}

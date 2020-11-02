@@ -1,0 +1,7 @@
+.misc-hidden {
+    color: transparent;
+}
+
+.misc-hidden::selection {
+    color: transparent;
+}
