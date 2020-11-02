@@ -1,12 +1,12 @@
 # misc-extension
-## Context menu
-### Copy link text
+### Context menu
+#### Copy link text
  * link
-### Copy image as data URI
+#### Copy image as data URI
  * image
-### Rotate clockwise
+#### Rotate clockwise
  * image
  * video
-### Rotate counterclockwise
+#### Rotate counterclockwise
  * image
  * video
