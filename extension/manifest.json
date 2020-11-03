@@ -3,10 +3,10 @@
     "version": "1.0",
     "description": "misc",
     "background": {
-      "scripts": [
-        "background.js"
-      ],
-      "persistent": false
+        "scripts": [
+            "background.js"
+        ],
+        "persistent": false
     },
     "permissions": [
         "contextMenus"
@@ -20,7 +20,8 @@
                 "myStyles.css"
             ],
             "js": [
-                "contentScript.js"
+                "contentScript.js",
+                "hideUsername.js"
             ],
             "run_at": "document_idle",
             "all_frames": true

@@ -3,7 +3,7 @@ document.addEventListener("contextmenu", function (event) {
     contextmenuElement = event.target;
 }, true);
 chrome.runtime.onMessage.addListener(function (message, sender, sendResponse) {
-    let element = contextmenuElement;
+    const element = contextmenuElement;
     console.log(sender);
     console.log(message);
     if (element === undefined) {
@@ -14,8 +14,8 @@ chrome.runtime.onMessage.addListener(function (message, sender, sendResponse) {
         if (Object.keys(message).length == 1) {
             let request = requests[0];
             if (request === "Copy link text") {
-                if (element.textContent !== "") {
-                    navigator.clipboard.writeText(element.textContent).then(function () {
+                if (element.textContent.trim() !== "") {
+                    navigator.clipboard.writeText(element.textContent.trim()).then(function () {
                         /* clipboard successfully set */
                         console.log("/* clipboard successfully set */");
                     }, function () {
@@ -27,7 +27,6 @@ chrome.runtime.onMessage.addListener(function (message, sender, sendResponse) {
             } else if (request === "Copy image as data URI") {
                 if (element.tagName === "IMG") {
                     fetch(new Request(element.src)).then(function (response) {
-                        console.log(response);
                         response.blob().then(function (blob) {
                             let reader = new FileReader();
                             reader.addEventListener("load", function () {
