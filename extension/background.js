@@ -12,6 +12,18 @@ chrome.contextMenus.create(
 );
 chrome.contextMenus.create(
     {
+        "id": "Search Google for link text",
+        "title": "Search Google for link text",
+        "contexts": ["link"],
+    },
+    function () {
+        if ("lastError" in chrome.runtime) {
+            console.log("chrome.runtime.lastError.message", chrome.runtime.lastError.message);
+        }
+    }
+);
+chrome.contextMenus.create(
+    {
         "id": "Copy image as data URI",
         "title": "Copy image as data URI",
         "contexts": ["image"],

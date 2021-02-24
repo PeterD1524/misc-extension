@@ -24,6 +24,14 @@ chrome.runtime.onMessage.addListener(function (message, sender, sendResponse) {
                         console.log("/* clipboard write failed */");
                     });
                 }
+            } else if (request === "Search Google for link text") {
+                if (element.textContent.trim() !== "") {
+                    let url = new URL("https://www.google.com/search");
+                    let value = element.textContent.trim().split(/\s+/);
+                    value = value.join(" ");
+                    url.searchParams.set("q", value);
+                    window.open(url.href, "_blank");
+                }
             } else if (request === "Copy image as data URI") {
                 if (element.tagName === "IMG") {
                     fetch(new Request(element.src)).then(function (response) {
